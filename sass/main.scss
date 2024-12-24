@@ -1,0 +1,263 @@
+@use "colors" as *;
+@use "animations" as *;
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Manrope", sans-serif;
+   font-size: 1.6rem;
+}
+
+.hidden {
+   visibility: hidden;
+}
+
+.show {
+   visibility: visible;
+}
+// nav
+.nav {
+   // mobile
+   &__desktop {
+      display: none;
+      z-index: 100;
+   }
+   &__mobile {
+      z-index: 100;
+      position: relative;
+      width: 100%;
+      padding: 0.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000000;
+      color: white;
+      &-menu {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+      &-btn {
+         top: 50%;
+         right: 5%;
+         padding: 0.5em;
+         font-size: 1.8em;
+         position: absolute;
+         translate: 0 -50%;
+      }
+      &-logo {
+         font-family: "Poppins";
+         padding: 0.5em;
+         font-size: 1.2em;
+         text-decoration: none;
+         color: $grey;
+         font-weight: bold;
+         span {
+            color: $red;
+         }
+      }
+      &-dropdown {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         background-color: #000000;
+         overflow: hidden;
+         max-height: 0;
+      }
+      &-link {
+         font-family: "Poppins";
+         padding: 0.5em 1em;
+         color: white;
+         text-decoration: none;
+         transition: color 0.3s;
+         &:hover {
+            color: red;
+         }
+         &:last-of-type {
+            padding-bottom: 1em;
+         }
+      }
+   }
+}
+
+// main
+
+// header
+.main {
+   position: relative;
+   width: 100%;
+   overflow: hidden;
+}
+.header {
+   position: relative;
+   width: 100%;
+   min-height: 80vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   z-index: 1;
+   color: white;
+
+   &__img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../img/header.jpg");
+      z-index: -2;
+      background-position: center;
+      background-size: cover;
+      filter: blur(3px);
+   }
+   &__shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #00000090;
+   }
+   &__heading {
+      padding-top: 1em;
+      width: 200px;
+      text-align: center;
+      font-size: 2.6em;
+      line-height: 1.2em;
+      font-weight: bold;
+      font-family: "Poppins";
+      text-transform: uppercase;
+      span {
+         color: $red;
+      }
+   }
+   &__text {
+      width: 400px;
+
+      text-align: center;
+      font-family: "Poppins";
+      margin: 2em 0;
+   }
+   &__btn {
+      background-color: $red;
+      font-size: 1em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      padding: 1em 6em;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-family: "Poppins";
+      transition: background-color 0.3s;
+   }
+}
+
+// mediaqueries
+@media (min-width: 480px) {
+   .header {
+      min-height: 100vh;
+      &__heading {
+         font-size: 4em;
+         width: 400px;
+      }
+      &__text {
+         width: 350px;
+      }
+   }
+}
+
+@media (min-width: 768px) {
+   .nav {
+      &__mobile {
+         &-logo {
+            font-size: 1.4em;
+         }
+         &-btn {
+            font-size: 2.4em;
+         }
+         &-link {
+            font-size: 1em;
+            padding: 0.5em 2em;
+         }
+      }
+   }
+   .header {
+      &__heading {
+         width: 800px;
+      }
+      &__text {
+         font-size: 1.2em;
+         width: 750px;
+      }
+   }
+}
+
+@media (min-width: 1200px) {
+   .nav {
+      &__mobile {
+         display: none;
+      }
+      &__desktop {
+         display: block;
+         position: relative;
+         width: 100%;
+         padding: 1em;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         background-color: #000000;
+         color: white;
+         &-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         &-link {
+            font-size: 1.2em;
+            text-decoration: none;
+            color: white;
+            padding: 0 1.5em;
+            transition: color 0.3s;
+            font-family: "Poppins";
+            &:hover {
+               color: $red;
+            }
+         }
+         &-logo {
+            font-size: 1.6em;
+            text-decoration: none;
+            color: $grey;
+            font-weight: bold;
+            font-family: "Poppins";
+            span {
+               color: $red;
+            }
+         }
+      }
+   }
+   .header {
+      min-height: 85vh;
+      &__heading {
+         font-size: 5.6em;
+         width: 1200px;
+      }
+      &__text {
+         font-size: 1.2em;
+         width: 750px;
+      }
+   }
+}
