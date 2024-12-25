@@ -10,8 +10,8 @@ const showMobileNav = () => {
    burgerBtn.classList.remove('showBtn')
    burgerBtn.classList.add('hideBtn')
 
-   xBtn.classList.remove("hideBtn");
-   xBtn.classList.add('showBtn')
+   xBtn.classList.remove('showBtn')
+   xBtn.classList.add("hideBtn");
    xBtn.classList.remove("hidden");
    xBtn.classList.add("show");
 
@@ -23,8 +23,8 @@ const closeMobileNav = () => {
 
    xBtn.classList.remove("show");
    xBtn.classList.add("hidden");
-   xBtn.classList.remove('showBtn')
-   xBtn.classList.add('hideBtn')
+   xBtn.classList.remove('hideBtn')
+   xBtn.classList.add('showBtn')
 
    burgerBtn.classList.remove("hidden");
    burgerBtn.classList.add("show");
@@ -33,6 +33,7 @@ const closeMobileNav = () => {
 
    navMobileDropdown.classList.add("slideUp");
 };
+
 
 burgerBtn.addEventListener("click", showMobileNav);
 xBtn.addEventListener("click", closeMobileNav);
