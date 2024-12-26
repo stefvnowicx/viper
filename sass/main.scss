@@ -13,7 +13,7 @@ html {
 }
 
 body {
-   font-family: "Manrope", sans-serif;
+   font-family: "Poppins", sans-serif;
    font-size: 1.6rem;
 }
 
@@ -30,6 +30,9 @@ body {
    &__desktop {
       display: none;
       z-index: 100;
+      .nav__active {
+         color: $red;
+      }
    }
    &__mobile {
       z-index: 100;
@@ -41,6 +44,9 @@ body {
       align-items: center;
       background-color: #000000;
       color: white;
+      .nav__active {
+         color: $red;
+      }
       &-menu {
          position: absolute;
          width: 100%;
@@ -227,7 +233,6 @@ body {
       text-transform: uppercase;
       font-weight: bold;
       padding: 1em 1em;
-      -webkit-text-stroke: 1px rgb(0, 0, 0);
       &::before {
          position: absolute;
          content: "";
@@ -281,7 +286,6 @@ body {
    &__title {
       font-weight: bold;
       font-size: 1.4em;
-      -webkit-text-stroke: 0.3px rgb(0, 0, 0);
    }
    &__text {
       width: 280px;
@@ -307,7 +311,6 @@ body {
       text-transform: uppercase;
       font-weight: bold;
       padding: 2em 1em;
-      -webkit-text-stroke: 1px rgb(255, 255, 255);
       &::before {
          position: absolute;
          content: "";
@@ -330,7 +333,7 @@ body {
       width: 150px;
       height: 230px;
       overflow: hidden;
-      &:hover .gallery__img{
+      &:hover .gallery__img {
          transform: scale(1.2);
       }
    }
@@ -339,6 +342,141 @@ body {
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s;
+   }
+}
+
+.faq {
+   position: relative;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   &__heading {
+      position: relative;
+      font-size: 3em;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 2em 1em 1em;
+      &::before {
+         position: absolute;
+         content: "";
+         left: 50%;
+         transform: translateX(-50%);
+         top: 30%;
+         height: 10px;
+         width: 30%;
+         background-color: $red;
+      }
+   }
+   &__img {
+      object-fit: cover;
+      width: 600px;
+      height: 350px;
+   }
+   &__boxes {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   &__box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      &:last-of-type {
+         margin-top: 2em;
+      }
+   }
+   &__question {
+      width: 300px;
+      font-size: 1.3em;
+      padding: 1em 0;
+   }
+   &__text {
+      width: 300px;
+      padding: 1em 0;
+   }
+}
+
+.contact {
+   position: relative;
+   width: 100%;
+   height: 520px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+   &__bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../img/selective-focus-photography-steering-wheel.webp");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.8;
+      filter: blur(5px);
+      z-index: -1;
+   }
+   &__shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: #0000008e;
+   }
+   &__heading {
+      width: 295px;
+      font-size: 1.2em;
+      color: white;
+      z-index: 10;
+      padding: 2em 0;
+   }
+   &__btn {
+      background-color: $red;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      text-transform: uppercase;
+      padding: 1em 6em;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      z-index: 10;
+   }
+}
+
+.footer {
+   position: relative;
+   width: 100%;
+   height: 200px;
+   background-color: black;
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   font-size: 1em;
+   text-align: left;
+   .fa-solid {
+      color: $red;
+      margin-right: 0.5em;
+   }
+   &__box {
+      padding: 0.5em 0;
+      width: 250px;
+      &--socials {
+         text-align: center;
+         font-size: 1.6em;
+         .fa-brands {
+            padding: 0 0.5em;
+         }
+      }
    }
 }
 
@@ -365,14 +503,36 @@ body {
          width: 350px;
       }
    }
-   .gallery{
+   .gallery {
       &__boxes {
          grid-template-columns: repeat(2, 235px);
       }
-      &__box{
+      &__box {
          width: 230px;
          height: 350px;
-      }}
+      }
+   }
+   .faq {
+      &__question,
+      &__text {
+         width: 375px;
+      }
+   }
+
+   .footer {
+      &__box {
+         padding: 0.5em 0;
+         width: 300px;
+         font-size: 1.2em;
+         &--socials {
+            text-align: center;
+            font-size: 1.8em;
+            .fa-brands {
+               padding: 0 0.5em;
+            }
+         }
+      }
+   }
 }
 
 @media (min-width: 768px) {
@@ -439,15 +599,82 @@ body {
          font-size: 1.2em;
       }
    }
-   .gallery{
+   .gallery {
       &__boxes {
          grid-template-columns: repeat(2, 380px);
          gap: 1em;
       }
-      &__box{
+      &__box {
          width: 380px;
          height: 575px;
-      }}
+      }
+   }
+
+   .faq {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__heading {
+         font-size: 3.4em;
+         padding: 2em 1em 0.5em 0;
+         &::before {
+            left: 30%;
+            top: 48%;
+            width: 60%;
+         }
+      }
+      &__boxes {
+         width: 750px;
+         display: grid;
+         grid-template-columns: 50% 50%;
+      }
+      &__box {
+         text-align: left;
+         align-items: start;
+         padding: 0em;
+         &--img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+         }
+      }
+      &__img {
+         position: absolute;
+         left: 10%;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 100%;
+         height: 80%;
+      }
+      &__question {
+         width: 375px;
+      }
+      &__text {
+         width: 375px;
+      }
+   }
+   .contact {
+      &__heading {
+         width: 405px;
+         font-size: 1.4em;
+      }
+   }
+   .footer {
+      height: 100px;
+      flex-direction: row;
+      &__box {
+         padding: 0 0.5em;
+         width: auto;
+         font-size: 1.2em;
+         &--socials {
+            text-align: center;
+            font-size: 1.8em;
+            .fa-brands {
+               padding: 0 0.5em;
+            }
+         }
+      }
+   }
 }
 
 @media (min-width: 1200px) {
@@ -530,14 +757,58 @@ body {
          padding: 0.7em;
       }
    }
-   .gallery{
+   .gallery {
       &__boxes {
          padding: 1em 0;
          grid-template-columns: repeat(2, 590px);
          gap: 1em;
       }
-      &__box{
+      &__box {
          width: 590px;
          height: 885px;
-      }}
+      }
+   }
+   .faq {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3em;
+      &__boxes {
+         width: 1150px;
+         display: grid;
+         grid-template-columns: 50% 50%;
+      }
+      &__box {
+         text-align: left;
+         align-items: start;
+         padding: 0em;
+         &--img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+         }
+      }
+      &__img {
+         position: absolute;
+         left: 10%;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 100%;
+         height: 80%;
+      }
+      &__question {
+         font-size: 1.6em;
+         width: 570px;
+      }
+      &__text {
+         font-size: 1.2em;
+         width: 570px;
+      }
+   }
+   .contact__heading {
+      width: auto;
+   }
+   .footer__box {
+      padding: 0 2em;
+   }
 }
