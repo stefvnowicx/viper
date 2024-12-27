@@ -5,7 +5,7 @@ const navMobileDropdown = document.querySelector(".nav__mobile-dropdown");
 const nameInput = document.querySelector(".contact__name");
 const emailInput = document.querySelector(".contact__mail");
 const msgInput = document.querySelector(".contact__textarea");
-const submitBtn = document.querySelector(".contact__btn");
+const submitBtn = document.querySelector(".contact__btn--js");
 
 const showMobileNav = () => {
    navMobileDropdown.classList.remove("slideUp");
