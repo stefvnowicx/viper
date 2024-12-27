@@ -1,0 +1,398 @@
+@use "colors" as *;
+@use "animations" as *;
+@use "./mixins" as *;
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+   font-size: 1.6rem;
+}
+
+.hidden {
+   visibility: hidden;
+}
+
+.show {
+   visibility: visible;
+}
+// nav
+.nav {
+   // mobile
+   &__desktop {
+      display: none;
+      z-index: 100;
+      .nav__active {
+         color: $red;
+      }
+   }
+   &__mobile {
+      z-index: 100;
+      position: fixed;
+      width: 100%;
+      padding: 0.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000000;
+      color: white;
+      .nav__active {
+         color: $red;
+      }
+      &-menu {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+      &-btn {
+         top: 50%;
+         right: 5%;
+         padding: 0.5em;
+         font-size: 1.8em;
+         position: absolute;
+         translate: 0 -50%;
+      }
+      &-logo {
+         font-family: "Poppins";
+         padding: 0.5em;
+         font-size: 1.2em;
+         text-decoration: none;
+         color: $grey;
+         font-weight: bold;
+         span {
+            color: $red;
+            font-style: italic;
+         }
+      }
+      &-dropdown {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         background-color: #000000;
+         overflow: hidden;
+         max-height: 0;
+      }
+      &-link {
+         font-family: "Poppins";
+         padding: 0.5em 1em;
+         color: white;
+         text-decoration: none;
+         transition: color 0.3s;
+         &:hover {
+            color: red;
+         }
+         &:last-of-type {
+            padding-bottom: 1em;
+         }
+      }
+   }
+}
+
+// main
+
+// header
+.main {
+   position: relative;
+   width: 100%;
+   overflow: hidden;
+   padding-top: 3em;
+}
+
+.footer {
+   position: relative;
+   width: 100%;
+   height: 200px;
+   background-color: black;
+   color: white;
+   @include d-flex;
+   flex-direction: column;
+   font-size: 1em;
+   text-align: left;
+   .fa-solid {
+      color: $red;
+      margin-right: 0.5em;
+   }
+   &__box {
+      padding: 0.5em 0;
+      width: 250px;
+      &--socials {
+         text-align: center;
+         font-size: 1.6em;
+         .fa-brands {
+            padding: 0 0.5em;
+            color: $red;
+         }
+      }
+   }
+}
+
+.gallery {
+   position: relative;
+   width: 100%;
+   padding: 2em 1em;
+   @include d-flex;
+   flex-direction: column;
+   &__heading {
+      position: relative;
+      font-size: 2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 2em 0 0.5em;
+      width: 320px;
+      &::before {
+         position: absolute;
+         content: "";
+         top: 25%;
+         left: 27%;
+         transform: translateX(-50%);
+         height: 10px;
+         width: 50%;
+         background-color: $red;
+      }
+   }
+   &__text {
+      font-family: "Manrope";
+      line-height: 1.6em;
+      padding: 0.5em 0 4em;
+      font-size: 1em;
+      width: 310px;
+   }
+   &__top {
+      padding: 0.5em;
+      @include d-flex;
+      flex-direction: column;
+   }
+   &__bottom {
+      padding: 0.5em;
+      display: grid;
+      grid-template-columns: 1;
+      grid-template-rows: 8;
+      
+   }
+   &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+   }
+
+   &__box {
+      position: relative;
+      width: 320px;
+      height: 280px;
+      background-color: #000000;
+      overflow: hidden;
+      margin: 0.5em 0;
+      &:hover .gallery__img {
+         transform: scale(1.2);
+      }
+   }
+}
+
+// mediaqueries
+@media (min-width: 480px) {
+   .footer {
+      &__box {
+         padding: 0.5em 0;
+         width: 300px;
+         font-size: 1.2em;
+         &--socials {
+            text-align: center;
+            font-size: 1.8em;
+            .fa-brands {
+               padding: 0 0.5em;
+            }
+         }
+      }
+   }
+   .gallery {
+      padding: 2em 0;
+      @include d-flex;
+      flex-direction: column;
+      &__heading {
+         width: 480px;
+      }
+      &__text {
+         width: 470px;
+      }
+      &__box {
+         width: 228px;
+         height: 280px;
+      }
+      &__bottom {
+         width: 480px;
+         grid-template-columns: 50% 50%;
+         grid-column-gap: 10px;
+         grid-template-rows: 4;
+         padding: 2em 0;
+      }
+   }
+}
+
+@media (min-width: 768px) {
+   .nav {
+      &__mobile {
+         &-logo {
+            font-size: 1.4em;
+         }
+         &-btn {
+            font-size: 2.4em;
+         }
+         &-link {
+            font-size: 1em;
+            padding: 0.5em 2em;
+         }
+      }
+   }
+
+   .footer {
+      height: 100px;
+      flex-direction: row;
+      &__box {
+         padding: 0 0.3em;
+         width: auto;
+         font-size: 1.2em;
+         &--socials {
+            text-align: center;
+            font-size: 1.8em;
+            .fa-brands {
+               padding: 0 0.5em;
+            }
+         }
+      }
+   }
+
+   .gallery {
+      padding: 2em 0;
+      &__heading {
+         width: 560px;
+         font-size: 3.6em;
+         line-height: 1em;
+         &::before {
+            top: 35%;
+            left: 15%;
+            width: 30%;
+         }
+      }
+      &__text {
+         width: 490px;
+         font-size: 1.1em;
+      }
+      &__box {
+         width: 180px;
+         height: 280px;
+      }
+      &__bottom {
+         width: 768px;
+         grid-template-columns: repeat(4, 25%);
+         grid-column-gap: 0;
+         grid-template-rows: 4;
+         padding: 2em 0;
+      }
+      &__top {
+         width: 768px;
+         align-items: start;
+         padding: 1em 0em 2em;
+      }
+   }
+}
+
+@media (min-width: 1200px) {
+   .nav {
+      &__mobile {
+         display: none;
+      }
+      &__desktop {
+         display: block;
+         position: fixed;
+         width: 100%;
+         padding: 0.7em;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         background-color: #000000;
+         color: white;
+         &-menu {
+            @include d-flex;
+         }
+         &-link {
+            font-size: 1.2em;
+            text-decoration: none;
+            color: white;
+            padding: 0 1.5em;
+            transition: color 0.3s;
+            font-family: "Poppins";
+            &:hover {
+               color: $red;
+            }
+         }
+         &-logo {
+            font-size: 1.6em;
+            text-decoration: none;
+            color: $grey;
+            font-weight: bold;
+            font-family: "Poppins";
+            span {
+               color: $red;
+               font-style: italic;
+            }
+         }
+      }
+   }
+
+   .footer__box {
+      padding: 0 2em;
+   }
+
+   .gallery {
+      padding: 0em 0 3em;
+
+      &__heading {
+         width: 560px;
+         font-size: 3.7em;
+         line-height: 1em;
+         &::before {
+            top: 35%;
+            left: 15%;
+            width: 30%;
+         }
+      }
+      &__text {
+         width: 490px;
+         font-size: 1.1em;
+      }
+      &__box {
+         width: 280px;
+         height: 280px;
+         margin: 0.6em;
+         padding: 0;
+      }
+      &__img{
+        width: 100%;
+        height: 100%;
+      }
+      &__bottom {
+         width: 1200px;
+         padding: 0.5em 0;
+         flex-direction: row;
+         flex-wrap: wrap;
+      }
+      &__top {
+         width: 1200px;
+         align-items: start;
+         padding: 1em 1em 2em;
+      }
+   }
+}
