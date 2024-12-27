@@ -483,6 +483,187 @@ body {
    }
 }
 
+// aboutus.html
+
+.aboutus,
+.offer {
+   position: relative;
+   width: 100%;
+   @include d-flex;
+   flex-direction: column;
+   padding: 3em 1em 4em;
+   text-align: center;
+   &__heading {
+      position: relative;
+      font-size: 2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 1em 1em;
+      &::before {
+         position: absolute;
+         content: "";
+         left: 50%;
+         transform: translateX(-50%);
+         top: 20%;
+         height: 10px;
+         width: 30%;
+         background-color: $red;
+      }
+   }
+   &__box {
+      width: 100%;
+      height: 100%;
+   }
+   &__left,
+   &__img {
+      width: 100%;
+      height: 100%;
+   }
+   &__right {
+      display: none;
+   }
+   &__left {
+      @include d-flex;
+      flex-direction: column;
+   }
+   &__text {
+      padding: 1em 0;
+      width: 275px;
+      font-size: 0.9em;
+      &:first-of-type {
+         padding: 0em 0em 1em;
+      }
+   }
+}
+
+.results {
+   position: relative;
+   width: 100%;
+   background-color: #000;
+   padding: 2em;
+   color: white;
+   @include d-flex;
+   flex-direction: column;
+   &__box {
+      @include d-flex;
+      flex-direction: column;
+      text-align: center;
+   }
+   &__number {
+      font-size: 3em;
+      padding: 0.5em 0 0.2em;
+      &--nopadding {
+         padding: 0 0 0.2em;
+      }
+   }
+}
+
+.clients {
+   position: relative;
+   width: 100%;
+   padding: 4em 1em 4em;
+   @include d-flex;
+   flex-direction: column;
+
+   &__heading {
+      position: relative;
+      font-size: 2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 2em 1em;
+      min-width: 240px;
+      text-align: center;
+      &::before {
+         position: absolute;
+         content: "";
+         left: 50%;
+         transform: translateX(-50%);
+         top: 30%;
+         height: 10px;
+         width: 30%;
+         background-color: $red;
+      }
+   }
+   &__boxes {
+      width: 100%;
+      height: 100%;
+      @include d-flex;
+      flex-direction: column;
+   }
+   &__box {
+      position: relative;
+      width: 320px;
+      height: 400px;
+      padding: 1em 2em;
+      background-color: #e9e9e9;
+      @include d-flex;
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 4em;
+      border-radius: 8px;
+      &::after {
+         position: absolute;
+         content: "";
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         height: 8px;
+         background-color: $red;
+         border-radius: 0 0 8px 8px;
+      }
+      & > * {
+         padding: 0.5em 0;
+      }
+   }
+   &__text {
+      width: 270px;
+      text-align: center;
+      font-size: 0.95em;
+      font-style: italic;
+   }
+   &__img {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      padding: 0;
+   }
+}
+
+// offer.html
+
+.offer {
+   padding: 2em 0;
+   &__text {
+      align-items: start;
+   }
+   &__heading {
+      font-size: 2.6em;
+   }
+   &__btn {
+      margin-top: 1em;
+      background-color: $red;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      text-transform: uppercase;
+      padding: 1em 0;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      z-index: 10;
+      font-family: "Poppins";
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      width: 210px;
+      text-align: center;
+      &:hover {
+         background-color: $blue;
+         border: 1px solid $blue;
+      }
+   }
+}
+
 // mediaqueries
 @media (min-width: 480px) {
    .header {
@@ -533,6 +714,25 @@ body {
             .fa-brands {
                padding: 0 0.5em;
             }
+         }
+      }
+   }
+   .aboutus,
+   .offer {
+      &__text {
+         width: 377px;
+      }
+   }
+   .results {
+      padding: 2em 4em;
+   }
+   .clients {
+      padding: 4em 8em;
+      &__heading {
+         width: 400px;
+         text-align: center;
+         &::before {
+            top: 30%;
          }
       }
    }
@@ -676,6 +876,93 @@ body {
          }
       }
    }
+   .aboutus,
+   .offer {
+      &__heading {
+         align-self: start;
+         padding-left: 0.3em;
+         font-size: 2.6em;
+         &::before {
+            left: 20%;
+         }
+      }
+
+      &__box {
+         width: 768px;
+         display: grid;
+         grid-template-columns: 50% 50%;
+         padding: 2em 0em 4em;
+         text-align: left;
+      }
+      &__text {
+         width: 367px;
+         font-size: 1.1em;
+      }
+      &__right {
+         display: block;
+         width: 100%;
+         height: 75%;
+         padding-top: 2em;
+      }
+      &__img {
+         object-fit: cover;
+      }
+   }
+   .results {
+      flex-direction: row;
+      align-items: start;
+      &__box {
+         @include d-flex;
+         padding: 0 2em;
+      }
+      &__number {
+         font-size: 3em;
+         padding: 0;
+      }
+   }
+   .clients {
+      padding: 3em 0 6em;
+      &__boxes {
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         flex-wrap: wrap;
+      }
+      &__box {
+         margin: 0em 2em;
+         height: 450px;
+         & > * {
+            padding: 1em 0;
+         }
+
+         &:last-of-type {
+            margin-top: 2em;
+            margin-left: 5em;
+         }
+      }
+      &__img {
+         padding: 0;
+      }
+      &__text {
+         font-size: 1.05em;
+      }
+   }
+
+   .offer {
+      padding: 2em 0;
+      &__heading {
+         &::before {
+            left: 33%;
+            width: 50%;
+         }
+      }
+      &__btn {
+         align-self: start;
+      }
+      &__img {
+         height: 120%;
+      }
+   }
 }
 
 @media (min-width: 1200px) {
@@ -805,5 +1092,75 @@ body {
    }
    .footer__box {
       padding: 0 2em;
+   }
+
+   .aboutus,
+   .offer {
+      &__heading {
+         align-self: start;
+         padding-left: 1.4em;
+         font-size: 2.6em;
+         &::before {
+            left: 30%;
+         }
+      }
+      &__box {
+         width: 1200px;
+      }
+      &__text {
+         width: 490px;
+      }
+      &__img {
+         object-fit: cover;
+      }
+   }
+   .results {
+      &__box {
+         padding: 0 8em;
+      }
+      &__text {
+         width: 170px;
+      }
+   }
+   .clients {
+      padding: 3em 0 8em;
+      &__boxes {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-wrap: wrap;
+      }
+      &__box {
+         margin: 0em 4em;
+      }
+   }
+
+   .offer {
+      &__heading {
+         &::before {
+            left: 53%;
+            width: 50%;
+         }
+      }
+      &__btn {
+         align-self: start;
+         margin: 0 3.5em;
+      }
+      &__img {
+         height: 140%;
+         object-fit: cover;
+      }
+   }
+   
+}
+
+@media (min-width: 1360px) {
+   .clients {
+      &__box {
+         &:last-of-type {
+            margin-top: 0;
+         }
+      }
    }
 }

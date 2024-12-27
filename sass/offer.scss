@@ -483,45 +483,90 @@ body {
    }
 }
 
-// mediaqueries
-@media (min-width: 480px) {
-   .header {
-      min-height: 100vh;
-      &__heading {
-         font-size: 4em;
-         width: 400px;
-      }
-      &__text {
-         width: 350px;
-      }
-   }
-   .images {
-      &__img {
-         &-box {
-            width: 380px;
-            height: 300px;
-         }
-      }
-      &__text {
-         width: 350px;
-      }
-   }
-   .gallery {
-      &__boxes {
-         grid-template-columns: repeat(2, 235px);
-      }
-      &__box {
-         width: 230px;
-         height: 350px;
-      }
-   }
-   .faq {
-      &__question,
-      &__text {
-         width: 375px;
+// offer.html
+.offer {
+   position: relative;
+   width: 100%;
+   @include d-flex;
+   flex-direction: column;
+   padding: 2em 1em 4em; // Updated padding (2em from second block)
+   text-align: center;
+
+   &__heading {
+      position: relative;
+      font-size: 2.6em; // Font size from the second block
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 1em 1em;
+      &::before {
+         position: absolute;
+         content: "";
+         left: 50%;
+         transform: translateX(-50%);
+         top: 20%;
+         height: 10px;
+         width: 30%;
+         background-color: $red;
       }
    }
 
+   &__box {
+      width: 100%;
+      height: 100%;
+   }
+
+   &__left {
+      @include d-flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__img {
+      width: 100%;
+      height: 100%;
+   }
+
+   &__right {
+      display: none;
+   }
+
+   &__text {
+      align-items: start; // From second block
+      padding: 1em 0;
+      width: 275px;
+      font-size: 0.9em;
+      &:first-of-type {
+         padding: 0em 0em 1em;
+      }
+   }
+
+   &__btn {
+      margin-top: 1em;
+      background-color: $red;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      text-transform: uppercase;
+      padding: 1em 0;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      z-index: 10;
+      font-family: "Poppins";
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      width: 210px;
+      text-align: center;
+      &:hover {
+         background-color: $blue;
+         border: 1px solid $blue;
+      }
+   }
+}
+
+// mediaqueries
+@media (min-width: 480px) {
    .footer {
       &__box {
          padding: 0.5em 0;
@@ -534,6 +579,12 @@ body {
                padding: 0 0.5em;
             }
          }
+      }
+   }
+
+   .offer {
+      &__text {
+         width: 377px;
       }
    }
 }
@@ -553,113 +604,7 @@ body {
          }
       }
    }
-   .header {
-      &__heading {
-         width: 800px;
-      }
-      &__text {
-         font-size: 1.2em;
-         width: 750px;
-      }
-   }
 
-   .special {
-      justify-content: center;
-      align-items: start;
-      flex-direction: row;
-      &__box {
-         position: relative;
-         padding: 1em 2em;
-      }
-
-      &__text {
-         width: 200px;
-      }
-      &__icon {
-         position: relative;
-      }
-      &__line {
-         padding: 0;
-         display: block;
-         position: absolute;
-         width: 550px;
-         height: 2px;
-         top: 50%;
-         left: 0;
-         transform: translateY(-50%);
-         background-color: $red;
-         z-index: -1;
-      }
-   }
-   .images {
-      &__heading {
-         font-size: 2em;
-      }
-      &__title {
-         font-size: 1.4em;
-      }
-      &__text {
-         font-size: 1.2em;
-      }
-   }
-   .gallery {
-      &__boxes {
-         grid-template-columns: repeat(2, 380px);
-         gap: 1em;
-      }
-      &__box {
-         width: 380px;
-         height: 575px;
-      }
-   }
-
-   .faq {
-      @include d-flex;
-      &__heading {
-         font-size: 3.4em;
-         padding: 2em 1em 0.5em 0;
-         &::before {
-            left: 30%;
-            top: 48%;
-            width: 60%;
-         }
-      }
-      &__boxes {
-         width: 750px;
-         display: grid;
-         grid-template-columns: 50% 50%;
-      }
-      &__box {
-         text-align: left;
-         align-items: start;
-         padding: 0em;
-         &--img {
-            position: relative;
-            width: 100%;
-            height: 100%;
-         }
-      }
-      &__img {
-         position: absolute;
-         left: 10%;
-         top: 50%;
-         transform: translateY(-50%);
-         width: 100%;
-         height: 80%;
-      }
-      &__question {
-         width: 375px;
-      }
-      &__text {
-         width: 375px;
-      }
-   }
-   .contact {
-      &__heading {
-         width: 405px;
-         font-size: 1.4em;
-      }
-   }
    .footer {
       height: 100px;
       flex-direction: row;
@@ -674,6 +619,48 @@ body {
                padding: 0 0.5em;
             }
          }
+      }
+   }
+   .offer {
+      padding: 2em 0;
+
+      &__heading {
+         align-self: start;
+         padding-left: 0.3em;
+         font-size: 2.6em;
+         &::before {
+            left: 33%;
+            width: 50%;
+         }
+      }
+
+      &__box {
+         width: 768px;
+         display: grid;
+         grid-template-columns: 50% 50%;
+         padding: 2em 0em 4em;
+         text-align: left;
+      }
+
+      &__text {
+         width: 367px;
+         font-size: 1.1em;
+      }
+
+      &__right {
+         display: block;
+         width: 100%;
+         height: 75%;
+         padding-top: 2em;
+      }
+
+      &__img {
+         object-fit: cover;
+         height: 120%;
+      }
+
+      &__btn {
+         align-self: start;
       }
    }
 }
@@ -720,90 +707,52 @@ body {
          }
       }
    }
-   .header {
-      min-height: 85vh;
-      &__heading {
-         font-size: 5.6em;
-         width: 1200px;
-      }
-      &__text {
-         font-size: 1.2em;
-         width: 750px;
-      }
+
+   .footer__box {
+      padding: 0 2em;
    }
-   .special {
-      justify-content: center;
-      align-items: start;
-      flex-direction: row;
+
+   .offer {
+      padding: 2em 0;
+
+      &__heading {
+         align-self: start;
+         padding-left: 1.4em;
+         font-size: 2.6em;
+         &::before {
+            left: 53%;
+            width: 50%;
+         }
+      }
+
       &__box {
-         padding: 1em 2em;
+         width: 1200px;
+         display: grid;
+         grid-template-columns: 50% 50%;
+         padding: 2em 0em 4em;
+         text-align: left;
       }
 
       &__text {
-         width: 350px;
+         width: 490px;
+         font-size: 1.1em;
       }
-      &__line {
-         width: 850px;
-      }
-   }
-   .images {
-      &__boxes {
-         @include d-flex;
-      }
-      &__box {
-         padding: 0.7em;
-      }
-   }
-   .gallery {
-      &__boxes {
-         padding: 1em 0;
-         grid-template-columns: repeat(2, 590px);
-         gap: 1em;
-      }
-      &__box {
-         width: 590px;
-         height: 885px;
-      }
-   }
-   .faq {
-      @include d-flex;
-      margin-bottom: 3em;
-      &__boxes {
-         width: 1150px;
-         display: grid;
-         grid-template-columns: 50% 50%;
-      }
-      &__box {
-         text-align: left;
-         align-items: start;
-         padding: 0em;
-         &--img {
-            position: relative;
-            width: 100%;
-            height: 100%;
-         }
-      }
-      &__img {
-         position: absolute;
-         left: 10%;
-         top: 50%;
-         transform: translateY(-50%);
+
+      &__right {
+         display: block;
          width: 100%;
-         height: 80%;
+         height: 75%;
+         padding-top: 2em;
       }
-      &__question {
-         font-size: 1.6em;
-         width: 570px;
+
+      &__img {
+         object-fit: cover;
+         height: 140%;
       }
-      &__text {
-         font-size: 1.2em;
-         width: 570px;
+
+      &__btn {
+         align-self: start;
+         margin: 0 3.5em;
       }
-   }
-   .contact__heading {
-      width: auto;
-   }
-   .footer__box {
-      padding: 0 2em;
    }
 }
