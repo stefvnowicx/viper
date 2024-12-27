@@ -2,10 +2,6 @@ const burgerBtn = document.querySelector(".fa-bars");
 const xBtn = document.querySelector(".fa-x");
 const navMobileDropdown = document.querySelector(".nav__mobile-dropdown");
 
-const nameInput = document.querySelector(".contact__name");
-const emailInput = document.querySelector(".contact__mail");
-const msgInput = document.querySelector(".contact__textarea");
-const submitBtn = document.querySelector(".contact__btn--js");
 
 const showMobileNav = () => {
    navMobileDropdown.classList.remove("slideUp");
@@ -52,20 +48,6 @@ const checkForm = () => {
    }
 };
 
-showPopup = () => {
-   const popup = document.querySelector(".popup");
-   popup.classList.remove("hidden");
-   popup.classList.add("show");
-   popup.classList.add("popup-animation");
-   const popupBtn = document.querySelector(".popup__btn");
-   popupBtn.addEventListener("click", () => {
-      location.reload(true);
-   });
-};
 
 burgerBtn.addEventListener("click", showMobileNav);
 xBtn.addEventListener("click", closeMobileNav);
-submitBtn.addEventListener("click", (e) => {
-   e.preventDefault();
-   checkForm();
-});
