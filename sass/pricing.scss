@@ -1,0 +1,424 @@
+@use "colors" as *;
+@use "animations" as *;
+@use "./mixins" as *;
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+   font-size: 1.6rem;
+}
+
+.hidden {
+   visibility: hidden;
+}
+
+.show {
+   visibility: visible;
+}
+// nav
+.nav {
+   // mobile
+   &__desktop {
+      display: none;
+      z-index: 100;
+      .nav__active {
+         color: $red;
+      }
+   }
+   &__mobile {
+      z-index: 100;
+      position: fixed;
+      width: 100%;
+      padding: 0.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000000;
+      color: white;
+      .nav__active {
+         color: $red;
+      }
+      &-menu {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+      &-btn {
+         top: 50%;
+         right: 5%;
+         padding: 0.5em;
+         font-size: 1.8em;
+         position: absolute;
+         translate: 0 -50%;
+      }
+      &-logo {
+         font-family: "Poppins";
+         padding: 0.5em;
+         font-size: 1.2em;
+         text-decoration: none;
+         color: $grey;
+         font-weight: bold;
+         span {
+            color: $red;
+            font-style: italic;
+         }
+      }
+      &-dropdown {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         background-color: #000000;
+         overflow: hidden;
+         max-height: 0;
+      }
+      &-link {
+         font-family: "Poppins";
+         padding: 0.5em 1em;
+         color: white;
+         text-decoration: none;
+         transition: color 0.3s;
+         &:hover {
+            color: red;
+         }
+         &:last-of-type {
+            padding-bottom: 1em;
+         }
+      }
+   }
+}
+
+// main
+
+// header
+.main {
+   position: relative;
+   width: 100%;
+   overflow: hidden;
+   padding-top: 3em;
+}
+
+.footer {
+   position: relative;
+   width: 100%;
+   height: 200px;
+   background-color: black;
+   color: white;
+   @include d-flex;
+   flex-direction: column;
+   font-size: 1em;
+   text-align: left;
+   .fa-solid {
+      color: $red;
+      margin-right: 0.5em;
+   }
+   &__box {
+      padding: 0.5em 0;
+      width: 250px;
+      &--socials {
+         text-align: center;
+         font-size: 1.6em;
+         .fa-brands {
+            padding: 0 0.5em;
+            color: $red;
+         }
+      }
+   }
+}
+
+// pricing scss
+.pricing {
+   position: relative;
+   width: 100%;
+   padding: 2em;
+   @include d-flex;
+   flex-direction: column;
+   &__heading {
+      position: relative;
+      font-size: 2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 1em 1em;
+
+      &::before {
+         position: absolute;
+         content: "";
+         left: 50%;
+         transform: translateX(-50%);
+         top: 25%;
+         height: 10px;
+         width: 50%;
+         background-color: $red;
+      }
+   }
+   &__box {
+      width: 320px;
+      position: relative;
+      @include d-flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 2em 0;
+      & > * {
+         padding: 0.3em 0;
+      }
+      &::before{
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: $grey;
+      }
+      &:first-of-type::before{
+        display: none;
+      }
+   }
+   &__price{
+    font-weight: bold;
+    font-size: 1.2em;
+   }
+   &__img{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+   }
+
+}
+
+// mediaqueries
+@media (min-width: 480px) {
+   .footer {
+      &__box {
+         padding: 0.5em 0;
+         width: 300px;
+         font-size: 1.2em;
+         &--socials {
+            text-align: center;
+            font-size: 1.8em;
+            .fa-brands {
+               padding: 0 0.5em;
+            }
+         }
+      }
+   }
+   .pricing{
+      padding: 2em 0;
+      &__boxes{
+         width: 100%;
+         height: 100%;
+         @include d-flex;
+         flex-direction: column;
+      }
+      &__box{
+         width: 480px;
+         display: grid;
+         grid-template-columns: 30% 70%;
+         grid-template-rows: repeat(3, 1fr);
+         grid-column-gap: 1em;
+      }
+      &__img{
+         grid-column: 1/2;
+         grid-row: 1/3;
+         align-self: center;
+         justify-self: center;
+      }
+      &__title{
+         grid-column: 2/3;
+         grid-row: 1/2;
+         width: 356px;
+      }
+      &__text{
+         grid-column: 2/3;
+         grid-row: 2/3;
+         width: 356px;
+      }
+      &__price{
+         grid-column: 2/3;
+         grid-row: 3/4;
+         width: 356px;
+      }
+      &__box {
+         &::before {
+           top: -10%;
+           left: 2%;
+         }
+      }
+   }
+}
+
+@media (min-width: 768px) {
+   .nav {
+      &__mobile {
+         &-logo {
+            font-size: 1.4em;
+         }
+         &-btn {
+            font-size: 2.4em;
+         }
+         &-link {
+            font-size: 1em;
+            padding: 0.5em 2em;
+         }
+      }
+   }
+
+   .footer {
+      height: 100px;
+      flex-direction: row;
+      &__box {
+         padding: 0 0.3em;
+         width: auto;
+         font-size: 1.2em;
+         &--socials {
+            text-align: center;
+            font-size: 1.8em;
+            .fa-brands {
+               padding: 0 0.5em;
+            }
+         }
+      }
+   }
+
+   .pricing{
+      &__heading{
+         padding: 2em 0 1em;
+         font-size: 2.6em;
+         &::before{
+            top: 40%;
+         }
+      }
+      &__box{
+         width: 768px;
+         display: grid;
+         grid-template-columns: 20% 60% 20%;
+         grid-template-rows: repeat(2, 1fr);
+         grid-column-gap: 1em;
+      }
+      &__img{
+         grid-column: 1/2;
+         grid-row: 1/3;
+         align-self: center;
+         justify-self: center;
+      }
+      &__title{
+         grid-column: 2/3;
+         grid-row: 1/2;
+         width: 450px;
+         font-size: 1.3em;
+      }
+      &__text{
+         grid-column: 2/3;
+         grid-row: 2/3;
+         width: 450px;
+      }
+      &__price{
+         grid-column: 3/4;
+         grid-row: 1/3;
+         width: 150px;
+         align-self: center;
+         justify-self: center;
+         font-size: 1.4em;
+      }
+      &__box {
+         &::before {
+           top: -10%;
+           left: 2%;
+         }
+      }
+   }
+
+}
+
+
+@media (min-width: 1200px) {
+   .nav {
+      &__mobile {
+         display: none;
+      }
+      &__desktop {
+         display: block;
+         position: fixed;
+         width: 100%;
+         padding: 0.7em;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         background-color: #000000;
+         color: white;
+         &-menu {
+            @include d-flex;
+         }
+         &-link {
+            font-size: 1.2em;
+            text-decoration: none;
+            color: white;
+            padding: 0 1.5em;
+            transition: color 0.3s;
+            font-family: "Poppins";
+            &:hover {
+               color: $red;
+            }
+         }
+         &-logo {
+            font-size: 1.6em;
+            text-decoration: none;
+            color: $grey;
+            font-weight: bold;
+            font-family: "Poppins";
+            span {
+               color: $red;
+               font-style: italic;
+            }
+         }
+      }
+   }
+
+   .footer__box {
+      padding: 0 2em;
+   }
+
+   .pricing{
+      &__heading{
+         font-size: 4em;
+      }
+      &__box{
+         width: 1200px;
+      }
+      &__img{
+         width: 150px;
+         height: 150px;
+      }
+      &__title{
+         font-size: 1.6em;
+         width: auto;
+      }
+      &__text{
+         width: 450px;
+         width: auto;
+      }
+      &__price{
+         font-size: 1.4em;
+      }
+      &__box {
+         &::before {
+           top: 0%;
+           left: 2%;
+         }
+      }
+   }
+}
