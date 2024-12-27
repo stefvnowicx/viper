@@ -227,6 +227,57 @@ body {
    }
 }
 
+.popup{
+   position: absolute;
+   left: 50%;
+   top: 40%;
+   transform: translate(-50%, -50%);
+   width: 500px;
+   height: 150px;
+   background-color: $red;
+   color: white;
+   text-transform: uppercase;
+   font-weight: bold;
+   font-size: 1.2em;
+   border-radius: 20px;
+   @include d-flex;
+   flex-direction: column;
+   p{
+      padding: 1em;
+   }
+   &__btn {
+      background-color: $red;
+      font-size: 1em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      padding: .5em 2em;
+      border: 1px solid white;
+      border-radius: 3px;
+      font-family: "Poppins";
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover {
+         background-color: $blue;
+         border: 1px solid $blue;
+      }
+   }
+}
+
+.popup-animation{
+   animation: popup .3s forwards ease-in;
+}
+
+@keyframes popup{
+   from{
+      transform: translate(-50%, -300%);
+   }
+   to{
+      transform: translateY(-50%, 0);
+   }
+}
+
 // mediaqueries
 @media (min-width: 480px) {
    .footer {

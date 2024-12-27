@@ -399,6 +399,83 @@ body {
           filter: grayscale(100%);
 }
 
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 500px;
+  height: 150px;
+  background-color: #ed213c;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.popup p {
+  padding: 1em;
+}
+.popup__btn {
+  background-color: #ed213c;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  padding: 0.5em 2em;
+  border: 1px solid white;
+  border-radius: 3px;
+  font-family: "Poppins";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.popup__btn:hover {
+  background-color: #002354;
+  border: 1px solid #002354;
+}
+
+.popup-animation {
+  -webkit-animation: popup 0.3s forwards ease-in;
+          animation: popup 0.3s forwards ease-in;
+}
+
+@-webkit-keyframes popup {
+  from {
+    -webkit-transform: translate(-50%, -300%);
+            transform: translate(-50%, -300%);
+  }
+  to {
+    -webkit-transform: translateY(-50%, 0);
+            transform: translateY(-50%, 0);
+  }
+}
+
+@keyframes popup {
+  from {
+    -webkit-transform: translate(-50%, -300%);
+            transform: translate(-50%, -300%);
+  }
+  to {
+    -webkit-transform: translateY(-50%, 0);
+            transform: translateY(-50%, 0);
+  }
+}
 @media (min-width: 480px) {
   .footer__box {
     padding: 0.5em 0;
