@@ -407,7 +407,7 @@ body {
           transform: translate(-50%, -50%);
   width: 500px;
   height: 150px;
-  background-color: #ed213c;
+  background-color: #002354;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -431,7 +431,7 @@ body {
   padding: 1em;
 }
 .popup__btn {
-  background-color: #ed213c;
+  background-color: #002354;
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
@@ -448,6 +448,8 @@ body {
 .popup__btn:hover {
   background-color: #002354;
   border: 1px solid #002354;
+  color: #002354;
+  background-color: #fff;
 }
 
 .popup-animation {

@@ -44,7 +44,7 @@ const checkForm = () => {
       if (input.value === "") {
          const label = input.previousElementSibling;
          const labelText = label.textContent.toLowerCase().slice(0, -1);
-         input.placeholder = "Musisz podać " + labelText; // Zaktualizuj placeholder
+         input.placeholder = "Musisz podać " + labelText; // Zaktualizuj placehold
       }
    });
    if (nameInput.value !== "" && emailInput.value !== "" && msgInput.value !== "") {
