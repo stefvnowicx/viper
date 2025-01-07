@@ -282,6 +282,10 @@ body {
   padding: 0.5em 0;
   width: 250px;
 }
+.footer__box a {
+  color: white;
+  text-decoration: none;
+}
 .footer__box--socials {
   text-align: center;
   font-size: 1.6em;
@@ -302,7 +306,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   padding: 2em 0 0.5em;
-  width: 320px;
+  width: 250px;
 }
 .contact__heading::before {
   position: absolute;
@@ -329,7 +333,8 @@ body {
 }
 .contact__text {
   padding: 1em 0 3em;
-  width: 310px;
+  width: 250px;
+  text-align: center;
 }
 .contact__form {
   display: -webkit-box;
@@ -348,14 +353,14 @@ body {
 }
 .contact__form input,
 .contact__form textarea {
-  width: 320px;
+  width: 250px;
   padding: 1em 0.5em;
   color: rgb(82, 82, 82);
   font-size: 1em;
   border: 1px solid rgb(182, 182, 182);
 }
 .contact__form label {
-  width: 320px;
+  width: 250px;
   padding: 0.5em 0;
 }
 .contact__form textarea {
@@ -375,8 +380,11 @@ body {
   font-family: "Poppins";
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  width: 250px;
   cursor: pointer;
   text-decoration: none;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 .contact__btn:hover {
   background-color: #002354;
@@ -395,8 +403,6 @@ body {
 .map__img {
   width: 100%;
   height: 100%;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
 }
 
 .popup {
@@ -565,6 +571,7 @@ body {
     width: 590px;
     -ms-flex-item-align: start;
         align-self: start;
+    text-align: left;
   }
   .contact__form input,
   .contact__form textarea {
@@ -682,5 +689,9 @@ body {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .contact__btn {
+    -ms-flex-item-align: start;
+        align-self: start;
   }
 }/*# sourceMappingURL=contact.css.map */

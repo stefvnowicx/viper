@@ -127,6 +127,10 @@ body {
    &__box {
       padding: 0.5em 0;
       width: 250px;
+      a{
+         color: white;
+         text-decoration: none;
+      }
       &--socials {
          text-align: center;
          font-size: 1.6em;
@@ -148,7 +152,7 @@ body {
       text-transform: uppercase;
       font-weight: bold;
       padding: 2em 0 0.5em;
-      width: 320px;
+      width: 250px;
       &::before {
          position: absolute;
          content: "";
@@ -167,7 +171,8 @@ body {
    }
    &__text {
       padding: 1em 0 3em;
-      width: 310px;
+      width: 250px;
+      text-align: center;
    }
    &__form {
       display: flex;
@@ -176,14 +181,14 @@ body {
       flex-direction: column;
       input,
       textarea {
-         width: 320px;
+         width: 250px;
          padding: 1em 0.5em;
          color: rgb(82, 82, 82);
          font-size: 1em;
          border: 1px solid rgb(182, 182, 182);
       }
       label {
-         width: 320px;
+         width: 250px;
          padding: 0.5em 0;
       }
       textarea {
@@ -203,8 +208,10 @@ body {
       border-radius: 3px;
       font-family: "Poppins";
       transition: all 0.3s;
+      width: 250px;
       cursor: pointer;
       text-decoration: none;
+      align-self: center;
       &:hover {
          background-color: $blue;
          border: 1px solid $blue;
@@ -223,11 +230,10 @@ body {
    &__img {
       width: 100%;
       height: 100%;
-      filter: grayscale(100%);
    }
 }
 
-.popup{
+.popup {
    position: absolute;
    left: 50%;
    top: 40%;
@@ -242,7 +248,7 @@ body {
    border-radius: 20px;
    @include d-flex;
    flex-direction: column;
-   p{
+   p {
       padding: 1em;
    }
    &__btn {
@@ -251,7 +257,7 @@ body {
       font-weight: bold;
       text-transform: uppercase;
       color: white;
-      padding: .5em 2em;
+      padding: 0.5em 2em;
       border: 1px solid white;
       border-radius: 3px;
       font-family: "Poppins";
@@ -267,15 +273,15 @@ body {
    }
 }
 
-.popup-animation{
-   animation: popup .3s forwards ease-in;
+.popup-animation {
+   animation: popup 0.3s forwards ease-in;
 }
 
-@keyframes popup{
-   from{
+@keyframes popup {
+   from {
       transform: translate(-50%, -300%);
    }
-   to{
+   to {
       transform: translateY(-50%, 0);
    }
 }
@@ -366,6 +372,7 @@ body {
       &__text {
          width: 590px;
          align-self: start;
+         text-align: left;
       }
       &__form {
          input,
@@ -459,7 +466,7 @@ body {
          label {
             font-size: 1em;
          }
-         textarea{
+         textarea {
             height: 150px;
          }
       }
@@ -473,6 +480,9 @@ body {
          width: 100%;
          height: 100%;
          object-fit: cover;
+      }
+      &__btn{
+         align-self: start;
       }
    }
 }

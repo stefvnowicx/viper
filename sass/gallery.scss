@@ -125,6 +125,10 @@ body {
       margin-right: 0.5em;
    }
    &__box {
+      a{
+         color: white;
+         text-decoration: none;
+      }
       padding: 0.5em 0;
       width: 250px;
       &--socials {
@@ -150,12 +154,13 @@ body {
       text-transform: uppercase;
       font-weight: bold;
       padding: 2em 0 0.5em;
-      width: 320px;
+      width: 280px;
+      text-align: center;
       &::before {
          position: absolute;
          content: "";
          top: 25%;
-         left: 27%;
+         left: 50%;
          transform: translateX(-50%);
          height: 10px;
          width: 50%;
@@ -167,7 +172,7 @@ body {
       line-height: 1.6em;
       padding: 0.5em 0 4em;
       font-size: 1em;
-      width: 310px;
+      width: 280px;
    }
    &__top {
       padding: 0.5em;
@@ -179,7 +184,6 @@ body {
       display: grid;
       grid-template-columns: 1;
       grid-template-rows: 8;
-      
    }
    &__img {
       width: 100%;
@@ -190,7 +194,7 @@ body {
 
    &__box {
       position: relative;
-      width: 320px;
+      width: 280px;
       height: 280px;
       background-color: #000000;
       overflow: hidden;
@@ -280,6 +284,7 @@ body {
          width: 560px;
          font-size: 3.6em;
          line-height: 1em;
+         text-align: left;
          &::before {
             top: 35%;
             left: 15%;
@@ -379,9 +384,9 @@ body {
          margin: 0.6em;
          padding: 0;
       }
-      &__img{
-        width: 100%;
-        height: 100%;
+      &__img {
+         width: 100%;
+         height: 100%;
       }
       &__bottom {
          width: 1200px;

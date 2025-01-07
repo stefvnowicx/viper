@@ -264,7 +264,7 @@ body {
           align-items: center;
   position: relative;
   width: 100%;
-  min-height: 80vh;
+  min-height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -523,6 +523,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   padding: 2em 1em;
+  text-align: center;
 }
 .gallery__heading::before {
   position: absolute;
@@ -530,22 +531,32 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 30%;
+  top: 20%;
   height: 10px;
   width: 30%;
   background-color: #ed213c;
 }
 .gallery__boxes {
-  display: grid;
-  grid-template-columns: repeat(2, 150px);
-  grid-template-rows: 50% 50%;
-  gap: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .gallery__box {
   position: relative;
-  width: 150px;
-  height: 230px;
+  width: 250px;
+  height: 330px;
   overflow: hidden;
+  padding: 0.5em 0;
 }
 .gallery__box:hover .gallery__img {
   -webkit-transform: scale(1.2);
@@ -746,6 +757,10 @@ body {
   padding: 0.5em 0;
   width: 250px;
 }
+.footer__box a {
+  color: white;
+  text-decoration: none;
+}
 .footer__box--socials {
   text-align: center;
   font-size: 1.6em;
@@ -774,11 +789,15 @@ body {
     width: 350px;
   }
   .gallery__boxes {
+    display: grid;
     grid-template-columns: repeat(2, 235px);
+    grid-template-rows: 50% 50%;
+    gap: 0.5em;
   }
   .gallery__box {
     width: 230px;
     height: 350px;
+    padding: 0;
   }
   .faq__question, .faq__text {
     width: 375px;
@@ -997,7 +1016,7 @@ body {
     font-style: italic;
   }
   .header {
-    min-height: 85vh;
+    min-height: 100vh;
   }
   .header__heading {
     font-size: 5.6em;

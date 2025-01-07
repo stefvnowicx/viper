@@ -363,6 +363,10 @@ body {
   padding: 0.5em 0;
   width: 250px;
 }
+.footer__box a {
+  color: white;
+  text-decoration: none;
+}
 .footer__box--socials {
   text-align: center;
   font-size: 1.6em;
@@ -444,7 +448,7 @@ body {
   padding: 1em 0;
   width: 275px;
   font-size: 0.9em;
-  text-align: left;
+  text-align: center;
 }
 .offer__text:first-of-type {
   padding: 0em 0em 1em;
@@ -617,6 +621,7 @@ body {
   .offer__text {
     width: 367px;
     font-size: 1.1em;
+    text-align: left;
   }
   .offer__right {
     display: block;

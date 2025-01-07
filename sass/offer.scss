@@ -179,7 +179,6 @@ body {
    }
 }
 
-
 .footer {
    position: relative;
    width: 100%;
@@ -197,6 +196,10 @@ body {
    &__box {
       padding: 0.5em 0;
       width: 250px;
+      a{
+         color: white;
+         text-decoration: none;
+      }
       &--socials {
          text-align: center;
          font-size: 1.6em;
@@ -257,11 +260,11 @@ body {
    }
 
    &__text {
-      align-items: center; 
+      align-items: center;
       padding: 1em 0;
       width: 275px;
       font-size: 0.9em;
-      text-align: left;
+      text-align: center;
       &:first-of-type {
          padding: 0em 0em 1em;
       }
@@ -291,29 +294,29 @@ body {
    }
 }
 
-.bottom{
+.bottom {
    position: relative;
    width: 100%;
    padding: 2em 0 6em;
    @include d-flex;
    flex-direction: column;
-   &__heading{
+   &__heading {
       text-transform: uppercase;
       font-size: 1.8em;
       width: 310px;
       padding: 1em 0;
       text-align: center;
    }
-   &__boxes{
+   &__boxes {
       width: 100%;
    }
-   &__box{
+   &__box {
       display: flex;
       justify-content: center;
       align-items: start;
       padding: 1em;
    }
-   &__num{
+   &__num {
       width: 50px;
       height: 50px;
       padding: 0;
@@ -323,7 +326,7 @@ body {
       @include d-flex;
       font-size: 1.4em;
    }
-   &__text{
+   &__text {
       width: 230px;
       font-size: 0.9em;
       line-height: 1.6em;
@@ -353,14 +356,14 @@ body {
          width: 377px;
       }
    }
-   .bottom{
-      &__boxes{
+   .bottom {
+      &__boxes {
          width: 480px;
       }
-      &__text{
+      &__text {
          width: 270px;
       }
-      &__num{
+      &__num {
          margin: 0 1em;
       }
    }
@@ -422,6 +425,7 @@ body {
       &__text {
          width: 367px;
          font-size: 1.1em;
+         text-align: left;
       }
 
       &__right {
@@ -440,17 +444,17 @@ body {
          align-self: start;
       }
    }
-   .bottom{
-      &__heading{
+   .bottom {
+      &__heading {
          width: 800px;
       }
-      &__boxes{
+      &__boxes {
          width: 768px;
          display: grid;
          grid-template-columns: 50% 50%;
          grid-template-rows: 50% 50%;
       }
-      &__box{
+      &__box {
          padding: 1em 0;
       }
    }
@@ -546,22 +550,22 @@ body {
          margin: 0 3.5em;
       }
    }
-   .bottom{
+   .bottom {
       padding: 4em 2em 6em;
-      &__boxes{
+      &__boxes {
          width: 1200px;
          display: grid;
          grid-template-columns: 50% 50%;
          grid-template-rows: 50% 50%;
       }
-      &__box{
+      &__box {
          padding: 2em 0;
       }
-      &__text{
+      &__text {
          width: 440px;
          font-size: 1em;
       }
-      &__heading{
+      &__heading {
          font-size: 2em;
          align-self: center;
          width: 1200px;
