@@ -13,6 +13,30 @@ showPopup = () => {
       location.reload(true);
    });
 };
+
+const checkForm = () => {
+   const inputs = [nameInput, emailInput, msgInput];
+
+   inputs.forEach((input) => {
+      if (input.value === "") {
+         const label = input.previousElementSibling;
+         const labelText = label.textContent.toLowerCase().slice(0, -1);
+         
+         input.placeholder = "Musisz podać " + labelText; // Zaktualizuj placeholder
+         input.classList.add('error'); // Dodaj klasę błędu, aby zmienić styl
+      } else {
+         input.classList.remove('error'); // Usuń klasę błędu, jeśli pole jest wypełnione
+      }
+   });
+
+   // Jeśli wszystkie pola są wypełnione, pokaż popup
+   if (nameInput.value !== "" && emailInput.value !== "" && msgInput.value !== "") {
+      showPopup();
+   }
+};
+
+
+
 submitBtn.addEventListener("click", (e) => {
    e.preventDefault();
    checkForm();

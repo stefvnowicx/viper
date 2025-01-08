@@ -9,6 +9,9 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
       <script src="https://kit.fontawesome.com/3899116f8c.js" crossorigin="anonymous"></script>
+
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
       <link rel="stylesheet" href="./css/offer.css" />
    </head>
    <body>
@@ -49,45 +52,45 @@
          <section class="offer">
             <div class="offer__box offer__box--top">
                <div class="offer__left">
-                  <h2 class="offer__heading">Oferta</h2>
-                  <p class="offer__text">
+                  <h2 class="offer__heading" data-aos="fade-up">Oferta</h2>
+                  <p class="offer__text" data-aos="fade-up" data-aos-delay="100">
                      Doświadcz najwyższej klasy luksusu i wydajności dzięki naszemu wynajmowi Chevrolet Corvette Convertible. Idealny na słoneczne dni lub specjalne okazje, ten oszałamiający pojazd łączy w sobie elegancki design z ekscytującą
                      prędkością. Dzięki potężnemu silnikowi V8, zaawansowanej technologii i jeździe z otwartym dachem, Corvette Convertible oferuje niezrównane doświadczenie, które sprawi, że każdy moment będzie niezapomniany. Ciesz się emocjonującą
                      jazdą sportowym samochodem, luksusowym wnętrzem oraz doskonałym systemem infotainment. To idealny wybór na wyjątkowe okazje, który zapadnie w pamięć gościom i przechodniom. Nasz dedykowany zespół jest dostępny, aby pomóc w każdym
                      aspekcie wynajmu, zapewniając bezproblemowe doświadczenie dostosowane do Twoich potrzeb.
                   </p>
-                  <a class="offer__btn" href="contact.html">rezerwacja</a>
+                  <a class="offer__btn" href="contact.html" data-aos="fade-up" data-aos-delay="200">rezerwacja</a>
                </div>
-               <div class="offer__right">
+               <div class="offer__right" data-aos="zoom-in">
                   <img src="./img/new/corvette-4535949_1280.jpg" alt="" class="offer__img" />
                </div>
             </div>
          </section>
          <!-- bottom -->
          <section class="bottom">
-            <h2 class="bottom__heading">dlaczego to jest warte?</h2>
+            <h2 class="bottom__heading" data-aos="fade-up">Dlaczego jesteśmy warci swojej ceny?</h2>
 
             <div class="bottom__boxes">
-               <div class="bottom__box">
+               <div class="bottom__box" data-aos="fade-up" data-aos-delay="100">
                   <div class="bottom__num"><p>1</p></div>
                   <div class="bottom__text">
                      Ciesz się ekscytacją z jazdy luksusowym samochodem sportowym, który oferuje doskonałe przyspieszenie i precyzyjne prowadzenie. Corvette Convertible została zaprojektowana z myślą o tych, którzy pragną niezapomnianych wrażeń na
                      drodze.
                   </div>
                </div>
-               <div class="bottom__box">
+               <div class="bottom__box" data-aos="fade-up" data-aos-delay="200">
                   <div class="bottom__num"><p>2</p></div>
                   <div class="bottom__text">
                      Doświadcz luksusowego wnętrza, nowoczesnego systemu infotainment oraz wysokiej jakości systemu dźwiękowego, co zapewnia komfortową jazdę dla Ciebie i Twoich pasażerów.
                   </div>
                </div>
-               <div class="bottom__box">
+               <div class="bottom__box" data-aos="fade-up" data-aos-delay="300">
                   <div class="bottom__num"><p>3</p></div>
                   <div class="bottom__text">
                      Corvette Convertible to doskonały wybór na wyjątkowe okazje, takie jak wesele, urodziny czy wydarzenia firmowe. Jego oszałamiający wygląd z pewnością przyciągnie uwagę gości i przechodniów, pozostawiając niezatarte wrażenie.
                   </div>
                </div>
-               <div class="bottom__box">
+               <div class="bottom__box" data-aos="fade-up" data-aos-delay="400">
                   <div class="bottom__num"><p>4</p></div>
                   <div class="bottom__text">
                      Nasz dedykowany zespół jest dostępny, aby pomóc Ci w każdym aspekcie wynajmu, zapewniając płynne doświadczenie od wyboru pojazdu po jego zwrot, dostosowane do Twoich indywidualnych potrzeb.
@@ -108,6 +111,15 @@
          </div>
          <div class="footer__box"><a href="mailto:example@example.com"><i class="fa-solid fa-envelope"></i> kontakt@vipercorvette.com</a></div>
       </footer>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+      <script>
+         AOS.init({
+            startEvent: 'DOMContentLoaded',
+            offset: 200,
+            once: true,
+         })
+       </script>
       <script src="./js/main.js"></script>
       <script src="./js/chat.js"></script>
    </body>

@@ -110,39 +110,37 @@ body {
    padding-top: 3em;
 }
 
-
 .footer {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    background-color: black;
-    color: white;
-    @include d-flex;
-    flex-direction: column;
-    font-size: 1em;
-    text-align: left;
-    .fa-solid {
-       color: $red;
-       margin-right: 0.5em;
-    }
-    &__box {
-       padding: 0.5em 0;
-       width: 250px;
-       a{
+   position: relative;
+   width: 100%;
+   height: 200px;
+   background-color: black;
+   color: white;
+   @include d-flex;
+   flex-direction: column;
+   font-size: 1em;
+   text-align: left;
+   .fa-solid {
+      color: $red;
+      margin-right: 0.5em;
+   }
+   &__box {
+      padding: 0.5em 0;
+      width: 250px;
+      a {
          color: white;
          text-decoration: none;
       }
-       &--socials {
-          text-align: center;
-          font-size: 1.6em;
-          .fa-brands {
-             padding: 0 0.5em;
-             color: $red;
-          }
-       }
-    }
- }
- 
+      &--socials {
+         text-align: center;
+         font-size: 1.6em;
+         .fa-brands {
+            padding: 0 0.5em;
+            color: $red;
+         }
+      }
+   }
+}
 
 // aboutus.html
 .aboutus {
@@ -209,8 +207,17 @@ body {
       text-align: center;
    }
    &__number {
+      position: relative;
       font-size: 3em;
       padding: 0.5em 0 0.2em;
+      &::before {
+         position: absolute;
+         left: -20%;
+         top: 50%;
+         transform: translateY(-50%);
+         content: "+";
+         font-size: 0.5em;
+      }
       &--nopadding {
          padding: 0 0 0.2em;
       }
@@ -237,7 +244,7 @@ body {
          content: "";
          left: 50%;
          transform: translateX(-50%);
-         top: 30%;
+         top: 25%;
          height: 10px;
          width: 30%;
          background-color: $red;
@@ -251,7 +258,7 @@ body {
    }
    &__box {
       position: relative;
-      width: 320px;
+      width: 280px;
       height: 400px;
       padding: 1em 2em;
       background-color: #e9e9e9;
@@ -290,248 +297,246 @@ body {
 }
 
 // mediaqueries
-@media (min-width: 480px) { 
-    .footer {
-       &__box {
-          padding: 0.5em 0;
-          width: 300px;
-          font-size: 1.2em;
-          &--socials {
-             text-align: center;
-             font-size: 1.8em;
-             .fa-brands {
-                padding: 0 0.5em;
-             }
-          }
-       }
-    }
-    .aboutus{
-       &__text {
-          width: 377px;
-       }
-    }
-    .results {
-       padding: 2em 4em;
-    }
-    .clients {
-       padding: 4em 8em;
-       &__heading {
-          width: 400px;
-          text-align: center;
-          &::before {
-             top: 30%;
-          }
-       }
-    }
- }
- 
- @media (min-width: 768px) {
-    .nav {
-       &__mobile {
-          &-logo {
-             font-size: 1.4em;
-          }
-          &-btn {
-             font-size: 2.4em;
-          }
-          &-link {
-             font-size: 1em;
-             padding: 0.5em 2em;
-          }
-       }
-    }
-    
-    .contact {
-       &__heading {
-          width: 405px;
-          font-size: 1.4em;
-       }
-    }
-    .footer {
-       height: 100px;
-       flex-direction: row;
-       &__box {
-          padding: 0 0.3em;
-          width: auto;
-          font-size: 1.2em;
-          &--socials {
-             text-align: center;
-             font-size: 1.8em;
-             .fa-brands {
-                padding: 0 0.5em;
-             }
-          }
-       }
-    }
-    .aboutus{
-       &__heading {
-          align-self: start;
-          padding-left: 0.3em;
-          font-size: 2.6em;
-          &::before {
-             left: 20%;
-          }
-       }
- 
-       &__box {
-          width: 768px;
-          display: grid;
-          grid-template-columns: 50% 50%;
-          padding: 2em 0em 4em;
-          text-align: left;
-       }
-       &__text {
-          width: 367px;
-          font-size: 1.1em;
-       }
-       &__right {
-          display: block;
-          width: 100%;
-          height: 75%;
-          padding-top: 2em;
-       }
-       &__img {
-          object-fit: cover;
-       }
-    }
-    .results {
-       flex-direction: row;
-       align-items: start;
-       &__box {
-          @include d-flex;
-          padding: 0 2em;
-       }
-       &__number {
-          font-size: 3em;
-          padding: 0;
-       }
-    }
-    .clients {
-       padding: 3em 0 6em;
-       &__boxes {
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-       }
-       &__box {
-          margin: 0em 2em;
-          height: 450px;
-          & > * {
-             padding: 1em 0;
-          }
- 
-          &:last-of-type {
-             margin-top: 2em;
-             margin-left: 5em;
-          }
-       }
-       &__img {
-          padding: 0;
-       }
-       &__text {
-          font-size: 1.05em;
-       }
-    }
- 
- }
- 
- @media (min-width: 1200px) {
-    .nav {
-       &__mobile {
-          display: none;
-       }
-       &__desktop {
-          display: block;
-          position: fixed;
-          width: 100%;
-          padding: 0.7em;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          background-color: #000000;
-          color: white;
-          &-menu {
-             @include d-flex;
-          }
-          &-link {
-             font-size: 1.2em;
-             text-decoration: none;
-             color: white;
-             padding: 0 1.5em;
-             transition: color 0.3s;
-             font-family: "Poppins";
-             &:hover {
-                color: $red;
-             }
-          }
-          &-logo {
-             font-size: 1.6em;
-             text-decoration: none;
-             color: $grey;
-             font-weight: bold;
-             font-family: "Poppins";
-             span {
-                color: $red;
-                font-style: italic;
-             }
-          }
-       }
-    }
-    .footer__box {
-       padding: 0 2em;
-    }
- 
-    .aboutus {
-       &__heading {
-          align-self: start;
-          padding-left: 1.4em;
-          font-size: 2.6em;
-          &::before {
-             left: 30%;
-          }
-       }
-       &__box {
-          width: 1200px;
-       }
-       &__text {
-          width: 490px;
-       }
-       &__img {
-          object-fit: cover;
-       }
-    }
-    .results {
-       &__box {
-          padding: 0 8em;
-       }
-       &__text {
-          width: 170px;
-       }
-    }
-    .clients {
-       padding: 3em 0 8em;
-       &__boxes {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-       }
-       &__box {
-          margin: 0em 4em;
-       }
-    }
- 
-    
- }
- 
- @media (min-width: 1360px) {
-    .clients {
-       &__box {
-          &:last-of-type {
-             margin-top: 0;
-          }
-       }
-    }
- }
+@media (min-width: 480px) {
+   .footer {
+      &__box {
+         padding: 0.5em 0;
+         width: 300px;
+         font-size: 1.2em;
+         &--socials {
+            text-align: center;
+            font-size: 1.8em;
+            .fa-brands {
+               padding: 0 0.5em;
+            }
+         }
+      }
+   }
+   .aboutus {
+      &__text {
+         width: 377px;
+      }
+   }
+   .results {
+      padding: 2em 4em;
+   }
+   .clients {
+      padding: 4em 8em;
+      &__heading {
+         width: 400px;
+         text-align: center;
+         &::before {
+            top: 30%;
+         }
+      }
+   }
+}
+
+@media (min-width: 768px) {
+   .nav {
+      &__mobile {
+         &-logo {
+            font-size: 1.4em;
+         }
+         &-btn {
+            font-size: 2.4em;
+         }
+         &-link {
+            font-size: 1em;
+            padding: 0.5em 2em;
+         }
+      }
+   }
+
+   .contact {
+      &__heading {
+         width: 405px;
+         font-size: 1.4em;
+      }
+   }
+   .footer {
+      height: 100px;
+      flex-direction: row;
+      &__box {
+         padding: 0 0.3em;
+         width: auto;
+         font-size: 1.2em;
+         &--socials {
+            text-align: center;
+            font-size: 1.8em;
+            .fa-brands {
+               padding: 0 0.5em;
+            }
+         }
+      }
+   }
+   .aboutus {
+      &__heading {
+         align-self: start;
+         padding-left: 0.3em;
+         font-size: 2.6em;
+         &::before {
+            left: 20%;
+         }
+      }
+
+      &__box {
+         width: 768px;
+         display: grid;
+         grid-template-columns: 50% 50%;
+         padding: 2em 0em 4em;
+         text-align: left;
+      }
+      &__text {
+         width: 367px;
+         font-size: 1.1em;
+      }
+      &__right {
+         display: block;
+         width: 100%;
+         height: 75%;
+         padding-top: 2em;
+      }
+      &__img {
+         object-fit: cover;
+      }
+   }
+   .results {
+      flex-direction: row;
+      align-items: start;
+      &__box {
+         @include d-flex;
+         padding: 0 2em;
+      }
+      &__number {
+         font-size: 3em;
+         padding: 0;
+      }
+   }
+   .clients {
+      padding: 3em 0 6em;
+      &__boxes {
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         flex-wrap: wrap;
+      }
+      &__box {
+         margin: 0em 2em;
+         height: 450px;
+         width: 320px;
+         & > * {
+            padding: 1em 0;
+         }
+
+         &:last-of-type {
+            margin-top: 2em;
+            margin-left: 5em;
+         }
+      }
+      &__img {
+         padding: 0;
+      }
+      &__text {
+         font-size: 1.05em;
+      }
+   }
+}
+
+@media (min-width: 1200px) {
+   .nav {
+      &__mobile {
+         display: none;
+      }
+      &__desktop {
+         display: block;
+         position: fixed;
+         width: 100%;
+         padding: 0.7em;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         background-color: #000000;
+         color: white;
+         &-menu {
+            @include d-flex;
+         }
+         &-link {
+            font-size: 1.2em;
+            text-decoration: none;
+            color: white;
+            padding: 0 1.5em;
+            transition: color 0.3s;
+            font-family: "Poppins";
+            &:hover {
+               color: $red;
+            }
+         }
+         &-logo {
+            font-size: 1.6em;
+            text-decoration: none;
+            color: $grey;
+            font-weight: bold;
+            font-family: "Poppins";
+            span {
+               color: $red;
+               font-style: italic;
+            }
+         }
+      }
+   }
+   .footer__box {
+      padding: 0 2em;
+   }
+
+   .aboutus {
+      &__heading {
+         align-self: start;
+         padding-left: 1.4em;
+         font-size: 2.6em;
+         &::before {
+            left: 30%;
+         }
+      }
+      &__box {
+         width: 1200px;
+      }
+      &__text {
+         width: 490px;
+      }
+      &__img {
+         object-fit: cover;
+      }
+   }
+   .results {
+      &__box {
+         padding: 0 8em;
+      }
+      &__text {
+         width: 170px;
+      }
+   }
+   .clients {
+      padding: 3em 0 8em;
+      &__boxes {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-wrap: wrap;
+      }
+      &__box {
+         margin: 0em 4em;
+      }
+   }
+}
+
+@media (min-width: 1360px) {
+   .clients {
+      &__box {
+         &:last-of-type {
+            margin-top: 0;
+         }
+      }
+   }
+}

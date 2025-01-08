@@ -154,7 +154,7 @@ body {
       }
    }
    &__text {
-      width: 400px;
+      width: 280px;
       text-align: center;
       font-family: "Poppins";
       margin: 2em 0;
@@ -176,6 +176,14 @@ body {
          background-color: $blue;
          border: 1px solid $blue;
       }
+   }
+   &__arrow {
+      position: absolute;
+      left: 50%;
+      bottom: 7.5%;
+      transform: translateX(-50%);
+      font-size: 3em;
+      cursor: pointer;
    }
 }
 
@@ -276,7 +284,8 @@ body {
       &-box {
          position: relative;
          padding: 0;
-         width: 320px;
+         // width: 320px;
+         width: 80%;
          height: 300px;
          &:hover .images__img-shadow {
             opacity: 0;
@@ -327,10 +336,11 @@ body {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-    }
+   }
    &__box {
       position: relative;
-      width: 250px;
+      // width: 250px;
+      width: 80%;
       height: 330px;
       overflow: hidden;
       padding: 0.5em 0;
@@ -474,7 +484,7 @@ body {
    &__box {
       padding: 0.5em 0;
       width: 250px;
-      a{
+      a {
          color: white;
          text-decoration: none;
       }
@@ -513,12 +523,12 @@ body {
       }
    }
    .gallery {
-         &__boxes {
-            display: grid;
-            grid-template-columns: repeat(2, 235px);
-            grid-template-rows: 50% 50%;
-            gap: 0.5em;
-         }
+      &__boxes {
+         display: grid;
+         grid-template-columns: repeat(2, 235px);
+         grid-template-rows: 50% 50%;
+         gap: 0.5em;
+      }
       &__box {
          width: 230px;
          height: 350px;
@@ -564,7 +574,6 @@ body {
       }
    }
    .header {
-      
       &__heading {
          width: 800px;
       }
@@ -598,8 +607,13 @@ body {
          top: 50%;
          left: 0;
          transform: translateY(-50%);
-         background-color: $red;
+         background-color: transparent;
          z-index: -1;
+         &-color{
+            width: 0;
+            height: 100%;
+            background-color: $red;
+         }
       }
    }
    .images {
@@ -758,6 +772,7 @@ body {
       }
    }
    .images {
+      padding-top: 4em;
       &__boxes {
          @include d-flex;
       }

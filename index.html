@@ -9,6 +9,9 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
       <script src="https://kit.fontawesome.com/3899116f8c.js" crossorigin="anonymous"></script>
+
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
       <link rel="stylesheet" href="./css/main.css" />
    </head>
    <body>
@@ -47,79 +50,82 @@
       <!-- main -->
       <main class="main">
          <header class="header">
+            <div class="header__arrow"><i class="fa-solid fa-chevron-down bounce-top"></i></div>
             <div class="header__img"></div>
             <div class="header__shadow"></div>
-            <h1 class="header__heading">Wynajem <span>Corvette</span> Marzeń</h1>
-            <p class="header__text">Odkryj niezapomniane doświadczenia z wynajmem Corvetty.</p>
-            <a class="header__btn" href="contact.html">kontakt</a>
+            <h1 class="header__heading" data-aos="fade-up">Wynajem <span>Corvette</span> Marzeń</h1>
+            <p class="header__text" data-aos="fade-up" data-aos-delay="100" >Odkryj niezapomniane doświadczenia z wynajmem Corvetty.</p>
+            <a class="header__btn" href="contact.html" data-aos="fade-up" data-aos-delay="200">kontakt</a>
          </header>
          <!-- special -->
          <section class="special">
             <div class="special__box">
                <div class="special__icon">
-                  <div class="special__line"></div>
+                  <div class="special__line">
+                     <div class="special__line-color specialLine" data-aos="specialLine"></div>
+                  </div>
                   <i class="fa-solid fa-check"></i>
                </div>
-               <h3 class="special__heading">Eksluzywna</h3>
-               <p class="special__text">Strona Viper Corvette Rentals specjalizuje się w wynajmie Corvette.</p>
+               <h3 class="special__heading" data-aos="fade-up">Eksluzywna</h3>
+               <p class="special__text" data-aos="fade-up" data-aos-delay="100">Strona Viper Corvette Rentals specjalizuje się w wynajmie Corvette.</p>
             </div>
             <div class="special__box">
                <div class="special__icon">
                   <i class="fa-solid fa-check"></i>
                </div>
-               <h3 class="special__heading">Wyjątkowa</h3>
-               <p class="special__text">Dedykowany zespół profesjonalistów zapewnia najwyższy poziom obsługi.</p>
+               <h3 class="special__heading" data-aos="fade-up">Wyjątkowa</h3>
+               <p class="special__text" data-aos="fade-up" data-aos-delay="100">Dedykowany zespół profesjonalistów zapewnia najwyższy poziom obsługi.</p>
             </div>
             <div class="special__box">
                <div class="special__icon"><i class="fa-solid fa-check"></i></div>
-               <h3 class="special__heading">Flota</h3>
-               <p class="special__text">Flota zawiera najnowsze modele Corvette, starannie utrzymane dla klientów.</p>
+               <h3 class="special__heading" data-aos="fade-up">Flota</h3>
+               <p class="special__text" data-aos="fade-up" data-aos-delay="100">Flota zawiera najnowsze modele Corvette, starannie utrzymane dla klientów.</p>
             </div>
          </section>
          <!-- images -->
          <section class="images">
-            <h2 class="images__heading">oferta specjalna</h2>
+            <h2 class="images__heading" data-aos="fade-up">oferta specjalna</h2>
             <div class="images__boxes">
                <div class="images__box">
-                  <div class="images__img-box">
+                  <div class="images__img-box" data-aos="zoom-in" data-aos-delay="100">
                      <img src="./img/unsplash-image.webp" alt="" class="images__img" />
                      <div class="images__img-shadow"></div>
                   </div>
-                  <h3 class="images__title">Wynajem</h3>
-                  <p class="images__text">Doświadcz ekscytacji prowadzenia najnowszych modeli Chevroleta Corvette.</p>
+                  <h3 class="images__title" data-aos="fade-up" data-aos-delay="100">Wynajem</h3>
+                  <p class="images__text" data-aos="fade-up" data-aos-delay="100">Doświadcz ekscytacji prowadzenia najnowszych modeli Chevroleta Corvette.</p>
                </div>
                <div class="images__box">
-                  <div class="images__img-box">
+                  <div class="images__img-box" data-aos="zoom-in" data-aos-delay="200">
                      <img src="./img/new/automobile-4406505_1280.jpg" alt="" class="images__img" />
                      <div class="images__img-shadow"></div>
                   </div>
-                  <h3 class="images__title">Obsługa</h3>
-                  <p class="images__text">Nasz zespół profesjonalistów zapewnia wyjątkową obsługę klienta.</p>
+                  <h3 class="images__title" data-aos="fade-up" data-aos-delay="200">Obsługa</h3>
+                  <p class="images__text" data-aos="fade-up" data-aos-delay="200">Nasz zespół profesjonalistów zapewnia wyjątkową obsługę klienta.</p>
                </div>
                <div class="images__box">
-                  <div class="images__img-box">
+                  <div class="images__img-box" data-aos="zoom-in" data-aos-delay="300">
                      <img src="./img/new/car-5573484_1280.jpg" alt="" class="images__img" />
                      <div class="images__img-shadow"></div>
                   </div>
-                  <h3 class="images__title">Eksploracja</h3>
-                  <p class="images__text">Wykorzystaj nasze luksusowe wynajmy Corvetty do odkrywania malowniczych tras.</p>
+                  <h3 class="images__title" data-aos="fade-up" data-aos-delay="300">Eksploracja</h3>
+                  <p class="images__text" data-aos="fade-up" data-aos-delay="300">Wykorzystaj nasze luksusowe wynajmy Corvetty do odkrywania malowniczych tras.</p>
                </div>
             </div>
          </section>
          <!-- gallery -->
          <section class="gallery">
-            <h2 class="gallery__heading">Galeria Marzeń</h2>
+            <h2 class="gallery__heading" data-aos="fade-up">Galeria Marzeń</h2>
             <div class="gallery__boxes">
-               <div class="gallery__box">
+               <div class="gallery__box" data-aos="zoom-in" data-aos-delay="100">
                   <img src="./img/unsplash-image-m4ygib7j.jpg" alt="" class="gallery__img" />
                </div>
-               <div class="gallery__box">
+               <div class="gallery__box" data-aos="zoom-in" data-aos-delay="200">
                   <img src="./img/czerwony-samochod-sportowy-zaparkowany-w-garazu.webp" alt="" class="gallery__img" />
                </div>
-               <div class="gallery__box">
+               <div class="gallery__box" data-aos="zoom-in" data-aos-delay="300">
                   <img src="./img/453554.jpg" alt="" class="gallery__img" />
                </div>
-               <div class="gallery__box">
+               <div class="gallery__box" data-aos="zoom-in" data-aos-delay="400">
                   <img src="./img/pexels-zandatsu-17095886.jpg" alt="" class="gallery__img" />
                </div>
             </div>
@@ -127,44 +133,55 @@
          <section class="faq">
             <div class="faq__boxes">
                <div class="faq__box">
-                  <h2 class="faq__heading">FAQ</h2>
+                  <h2 class="faq__heading" data-aos="fade-up">FAQ</h2>
 
-                  <h3 class="faq__question">Jakie modele Chevroleta Corvette są dostępne do wynajęcia?</h3>
-                  <p class="faq__text">Oferujemy oszałamiającą gamę najnowszych modeli Corvette, z których każdy jest starannie utrzymywany, aby zapewnić najwyższe standardy wydajności i komfortu.</p>
+                  <h3 class="faq__question" data-aos="fade-up" data-aos-delay="100">Jakie modele Chevroleta Corvette są dostępne do wynajęcia?</h3>
+                  <p class="faq__text" data-aos="fade-up" data-aos-delay="200">Oferujemy oszałamiającą gamę najnowszych modeli Corvette, z których każdy jest starannie utrzymywany, aby zapewnić najwyższe standardy wydajności i komfortu.</p>
 
-                  <h3 class="faq__question">Jak mogę zarezerwować wynajem Corvetty?</h3>
-                  <p class="faq__text">Możesz łatwo dokonać rezerwacji, kontaktując się z naszym dedykowanym zespołem przez naszą stronę internetową lub telefonicznie. Pomożemy Ci wybrać idealną Corvette na Twoją okazję.</p>
+                  <h3 class="faq__question" data-aos="fade-up" data-aos-delay="100">Jak mogę zarezerwować wynajem Corvetty?</h3>
+                  <p class="faq__text" data-aos="fade-up" data-aos-delay="200">Możesz łatwo dokonać rezerwacji, kontaktując się z naszym dedykowanym zespołem przez naszą stronę internetową lub telefonicznie. Pomożemy Ci wybrać idealną Corvette na Twoją okazję.</p>
 
-                  <h3 class="faq__question">Jakie są wymagania wiekowe i licencyjne?</h3>
-                  <p class="faq__text">Tak, wynajmujący muszą mieć co najmniej 21 lat i posiadać ważne prawo jazdy. Mogą być dodatkowe wymagania, dlatego zalecamy skontaktowanie się z naszym zespołem w celu uzyskania szczegółów.</p>
+                  <h3 class="faq__question" data-aos="fade-up" data-aos-delay="100">Jakie są wymagania wiekowe i licencyjne?</h3>
+                  <p class="faq__text" data-aos="fade-up" data-aos-delay="200">Tak, wynajmujący muszą mieć co najmniej 21 lat i posiadać ważne prawo jazdy. Mogą być dodatkowe wymagania, dlatego zalecamy skontaktowanie się z naszym zespołem w celu uzyskania szczegółów.</p>
 
-                  <h3 class="faq__question">Co jest zawarte w cenie wynajmu?</h3>
-                  <p class="faq__text">Nasze ceny wynajmu zazwyczaj obejmują ubezpieczenie oraz całodobową pomoc drogową. Aby uzyskać szczegółowe informacje, zapoznaj się z umową wynajmu lub skontaktuj się z naszym zespołem obsługi klienta.</p>
+                  <h3 class="faq__question" data-aos="fade-up" data-aos-delay="100">Co jest zawarte w cenie wynajmu?</h3>
+                  <p class="faq__text" data-aos="fade-up" data-aos-delay="200">Nasze ceny wynajmu zazwyczaj obejmują ubezpieczenie oraz całodobową pomoc drogową. Aby uzyskać szczegółowe informacje, zapoznaj się z umową wynajmu lub skontaktuj się z naszym zespołem obsługi klienta.</p>
                </div>
 
-               <div class="faq__box faq__box--img">
+               <div class="faq__box faq__box--img" data-aos="zoom-in">
                   <img src="./img/classic-red-and-white-car-interior.webp" alt="faq--image" class="faq__img" />
                </div>
             </div>
          </section>
          <section class="contact">
-            <div class="contact__bg"></div>
+            <div class="contact__bg" ></div>
             <div class="contact__shadow"></div>
-            <h2 class="contact__heading">Skontaktuj się z nami i rozpocznij swoją przygodę!</h2>
-            <a class="contact__btn" href="contact.html">kontakt</a>
+            <h2 class="contact__heading" data-aos="fade-up">Skontaktuj się z nami i rozpocznij swoją przygodę!</h2>
+            <a class="contact__btn" href="contact.html" data-aos="fade-up" data-aos-delay="100">kontakt</a>
          </section>
       </main>
       <footer class="footer">
          <div class="footer__box footer__box--socials">
-            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook" ></i></a>
+            <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter" ></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" ></i></a>
          </div>
-         <div class="footer__box">
+         <div class="footer__box" >
             <a href="tel:+48123456789"><i class="fa-solid fa-phone"></i> Telefon: 536-536-536</a>
          </div>
-         <div class="footer__box"><a href="mailto:example@example.com"><i class="fa-solid fa-envelope"></i> kontakt@vipercorvette.com</a></div>
+         <div class="footer__box" ><a href="mailto:example@example.com"><i class="fa-solid fa-envelope"></i> kontakt@vipercorvette.com</a></div>
       </footer>
+
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+      <script>
+         AOS.init({
+            startEvent: 'DOMContentLoaded',
+            offset: 200,
+            once: true,
+         })
+       </script>
+
       <script src="./js/main.js"></script>
       <script src="./js/"></script>
    </body>

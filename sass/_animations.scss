@@ -1,10 +1,10 @@
-// dropdown
+
 @keyframes slideDown {
    from {
       max-height: 0;
    }
    to {
-      max-height: 500px; // wystarczająco duża wartość jako zapas
+      max-height: 500px; 
    }
 }
 
@@ -52,28 +52,55 @@
    animation: showBtn 1s forwards;
 }
 
-@keyframes specialLineSm {
+@keyframes specialLine {
    from {
       width: 0;
    }
    to {
-      width: 550px;
+      width: 100%;
    }
 }
 
-.specialLineSm {
-   animation: specialLineSm 0.3s forwards linear;
+.special__line-color.aos-animate {
+   animation: specialLine 0.5s forwards linear; 
 }
 
-@keyframes specialLineBg {
-   from {
-      width: 0;
-   }
-   to {
-      width: 850px;
-   }
+.bounce-top {
+	animation: bounce-top 2s infinite both;
+   display: block;
 }
 
-.specialLineBg {
-   animation: specialLineBg 0.3s forwards linear;
+
+@media (min-width: 768px) {
+
+@keyframes bounce-top {
+   0% {
+     transform: translateY(-35px);
+     animation-timing-function: ease-in;
+     opacity: 1;
+   }
+   24% {
+     opacity: 1;
+   }
+   40% {
+     transform: translateY(-24px);
+     animation-timing-function: ease-in;
+   }
+   65% {
+     transform: translateY(-12px);
+     animation-timing-function: ease-in;
+   }
+   25%,
+   55%,
+   75%,
+   87% {
+     transform: translateY(0px);
+     animation-timing-function: ease-out;
+   }
+   100% {
+     transform: translateY(0px);
+     animation-timing-function: ease-out;
+     opacity: 1;
+   }
+ }
 }

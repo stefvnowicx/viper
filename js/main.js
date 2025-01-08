@@ -1,6 +1,8 @@
 const burgerBtn = document.querySelector(".fa-bars");
 const xBtn = document.querySelector(".fa-x");
 const navMobileDropdown = document.querySelector(".nav__mobile-dropdown");
+const arrowDown = document.querySelector(".header__arrow")
+const section = document.querySelector('section.special');
 
 
 const showMobileNav = () => {
@@ -34,20 +36,12 @@ const closeMobileNav = () => {
    navMobileDropdown.classList.add("slideUp");
 };
 
-const checkForm = () => {
-   const inputs = [nameInput, emailInput, msgInput];
-   inputs.forEach((input) => {
-      if (input.value === "") {
-         const label = input.previousElementSibling;
-         const labelText = label.textContent.toLowerCase().slice(0, -1);
-         input.placeholder = "Musisz podać " + labelText; // Zaktualizuj placehold
-      }
-   });
-   if (nameInput.value !== "" && emailInput.value !== "" && msgInput.value !== "") {
-      showPopup();
-   }
-};
-
-
 burgerBtn.addEventListener("click", showMobileNav);
 xBtn.addEventListener("click", closeMobileNav);
+arrowDown.addEventListener('click', () => {
+   const sectionPosition = section.offsetTop; // Pozycja sekcji od góry strony
+   window.scrollTo({ 
+      top: sectionPosition - 50, // Odejmujemy 50px
+      behavior: "smooth" 
+   });
+});
